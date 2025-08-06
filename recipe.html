@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Recipe Book</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #f78c6b;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .recipe-card {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .recipe-card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .recipe-card h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .recipe-details {
+      margin-top: 1rem;
+      display: none;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .recipe-card {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍳 My Recipe Book</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- Biryani Recipe -->
+    <div class="recipe-card" onclick="toggleDetails(this)">
+      <h2>Chicken Biryani</h2>
+      <p>Fragrant and spicy layered rice and chicken dish.</p>
+      <div class="recipe-details">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>2 cups Basmati rice</li>
+          <li>500g Chicken (marinated)</li>
+          <li>2 Onions (sliced)</li>
+          <li>1 cup Yogurt</li>
+          <li>Biryani spices (garam masala, turmeric, cumin, etc.)</li>
+          <li>Saffron & Milk (for color)</li>
+          <li>Fresh coriander and mint</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <p>
+          1. Cook basmati rice 70% through and set aside.<br>
+          2. Sauté onions until golden brown.<br>
+          3. Cook marinated chicken with spices and yogurt until tender.<br>
+          4. Layer chicken and rice in a pot. Add fried onions, mint, coriander, and saffron milk.<br>
+          5. Cover and cook on low heat (dum) for 20 minutes.<br>
+          6. Serve hot with raita.
+        </p>
+      </div>
+    </div>
+
+   <div class="recipe-card" onclick="toggleDetails(this)">
+      <h2>Chicken Curry</h2>
+      <p>Rich and spicy chicken curry dish.</p>
+      <div class="recipe-details">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Chicken</li>
+          <li>Onions</li>
+          <li>Tomatoes</li>
+          <li>Spices</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <p>Sauté onions. Add chicken and spices. Simmer with tomatoes.</p>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="toggleDetails(this)">
+      <h2>Chocolate Chip Cookies</h2>
+      <p>Soft and chewy cookies loaded with chocolate chips.</p>
+      <div class="recipe-details">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li>Flour</li>
+          <li>Sugar</li>
+          <li>Butter</li>
+          <li>Chocolate Chips</li>
+        </ul>
+        <h3>Instructions:</h3>
+        <p>Mix ingredients. Shape dough. Bake at 180°C for 10-12 minutes.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleDetails(card) {
+      const details = card.querySelector(".recipe-details");
+      const isVisible = details.style.display === "block";
+      
+      // Hide all other details
+      document.querySelectorAll(".recipe-details").forEach(d => d.style.display = "none");
+      
+      // Toggle selected card
+      details.style.display = isVisible ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
